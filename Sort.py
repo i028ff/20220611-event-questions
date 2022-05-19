@@ -9,7 +9,6 @@ def main():
 
 def sort(array):
     # 要素が一つの場合はソートの必要がないので、そのまま返却
-    print(array)
     if len(array) == 1:
         return array
 
