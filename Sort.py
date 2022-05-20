@@ -36,20 +36,16 @@ def sort(array):
             array[left], array[right] = array[right], array[left]
 
     #2つの配列に分ける
-    if len(array) >= 3:
-        if left == 0:
-            return sort(array[::-1])
-        else:
-            array1 = array[:left]
-            array2 = array[left:]
-            
-            return sort(array1) ,sort(array2)
-        
+    #基準値未満がなかった場合、基準値変えてもう一度探索
+    if left == 0:
+        return sort(array[::-1])
+    
     else:
-        array1 = [array[0]]
-        array2 = [array[1]]
-        
+        array1 = array[:left]
+        array2 = array[left:]
+            
         return sort(array1) ,sort(array2)
+
 
 
     # ここまで記述
